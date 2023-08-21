@@ -12,6 +12,7 @@ BingoBoard::BingoBoard(int line)
 
 void BingoBoard::MakingBoard()
 {
+	int line = this->line;
 	this->board = new int* [line];
 	for (int i = 0; i < line; i++)
 	{
@@ -21,6 +22,20 @@ void BingoBoard::MakingBoard()
 	for (int i = 0; i < line; i++)
 		for (int j = 0; j < line; j++)
 			this->board[i][j] = line * i + j + 1;
+
+	for (int i = 0; i < line * line * 1000; i++)
+	{
+		int ra1 = std::rand() % (line * line);
+		int ra2 = 0;
+		do
+		{
+			ra2 = std::rand() % (line * line);
+		} while (ra1 == ra2);
+
+		int temp = this->board[ra1 / line][ra1 % line];
+		this->board[ra1 / line][ra1 % line] = this->board[ra2 / line][ra2 % line];
+		this->board[ra2 / line][ra2 % line] = temp;
+	}
 }
 
 void BingoBoard::DiscardBoard()

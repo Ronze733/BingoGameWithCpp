@@ -1,5 +1,10 @@
 #include "stdafx.h"
 
+void ScreenClear()
+{
+    system(CLEAR_SCREEN);
+}
+
 int main()
 {
     string str;
@@ -27,11 +32,11 @@ int main()
             cin >> str;
 
             // 콘솔 화면을 지움 (Linux/Unix: clear, Windows: cls)
-            system("cls"); // 또는 system("cls");
+            ScreenClear(); // 또는 system("cls");
         }
     }
 
-    system("cls");
+    ScreenClear();
 
     // 게임 시작
 
