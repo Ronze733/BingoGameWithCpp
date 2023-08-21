@@ -1,9 +1,8 @@
 # Ignore Visual Studio files
 .vs/
-.x64/
+x64/
 *.suo
 *.user
-.vcxproj/
 
 # Prerequisites
 *.d
