@@ -4,6 +4,7 @@ x64/
 *.vcxproj
 *.suo
 *.user
+*.filters
 
 # Prerequisites
 *.d
